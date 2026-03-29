@@ -276,6 +276,22 @@
         .gold-border-left {
             border-left: 5px solid var(--gold-brand);
         }
+        /* Zone badges - fixed visibility */
+.zone-badge {
+    background: rgba(255,255,255,0.12);
+    color: var(--gold-brand) !important;
+    border: 1px solid rgba(255,192,0,0.3);
+    border-radius: 60px;
+    padding: 6px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    backdrop-filter: blur(2px);
+}
+
+.zone-badge i {
+    color: var(--gold-brand);
+    margin-right: 6px;
+}
     </style>
 </head>
 <body>
@@ -321,10 +337,10 @@
                         <a href="#exam-structure" class="btn btn-outline-gold btn-lg">View Exam Pattern</a>
                     </div>
                     <div class="mt-4 d-flex flex-wrap gap-2">
-                        <span class="zone-badge bg-white bg-opacity-20 text-white"><i class="fas fa-map-marker-alt"></i> Dharmapuri District</span>
-                        <span class="zone-badge bg-white bg-opacity-20 text-white"><i class="fas fa-users"></i> 6 Taluks covered</span>
-                        <span class="zone-badge bg-white bg-opacity-20 text-white"><i class="fas fa-school"></i> Govt | Private | CBSE</span>
-                    </div>
+    <span class="zone-badge"><i class="fas fa-map-marker-alt"></i> Dharmapuri District</span>
+    <span class="zone-badge"><i class="fas fa-users"></i> 6 Taluks covered</span>
+    <span class="zone-badge"><i class="fas fa-school"></i> Govt | Private | CBSE</span>
+</div>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0 text-center" data-aos="fade-left">
                     <div class="bg-white p-4 rounded-4 shadow-lg" style="border-radius: 2rem;">
