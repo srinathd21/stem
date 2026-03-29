@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarship Details | SSCET 2026 | ₹1000 per month</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #002147;
+            --gold-brand: #ffc000;
+            --gold-light: #ffd966;
+            --pure-white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-soft: #eef2f8;
+            --shadow-sm: 0 12px 30px rgba(0,33,71,0.08);
+            --shadow-hover: 0 20px 35px rgba(0,33,71,0.12);
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+        
+        /* navbar */
+        .navbar {
+            background: var(--primary-navy) !important;
+            padding: 0.9rem 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--gold-brand);
+        }
+        
+        .navbar-brand {
+            color: var(--gold-brand) !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-brand span {
+            color: var(--pure-white);
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 40px;
+            margin-left: 8px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.92) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            margin: 0 0.6rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold-brand) !important;
+        }
+        
+        /* page header */
+        .page-header {
+            background: linear-gradient(115deg, #002147 0%, #0a2c4e 100%);
+            padding: 70px 0 80px;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        .gold-text {
+            color: var(--gold-brand);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: var(--gold-brand);
+            display: block;
+            margin: 16px auto 0;
+            border-radius: 6px;
+        }
+        
+        .section-title-left {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .section-title-left:after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--gold-brand);
+            display: block;
+            margin-top: 10px;
+            border-radius: 6px;
+        }
+        
+        .scholarship-card {
+            background: var(--pure-white);
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,33,71,0.05);
+        }
+        
+        .scholarship-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .amount-badge {
+            background: linear-gradient(135deg, #ffc000, #ffdb7e);
+            color: #002147;
+            font-size: 2rem;
+            font-weight: 800;
+            padding: 0.5rem 1.5rem;
+            border-radius: 60px;
+            display: inline-block;
+        }
+        
+        .info-card {
+            background: var(--pure-white);
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        
+        .badge-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .stat-number-lg {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold-brand);
+            line-height: 1;
+        }
+        
+        .footer {
+            background: #001a36;
+            color: #e0e7f0;
+            padding: 50px 0 25px;
+            border-top: 3px solid var(--gold-brand);
+        }
+        
+        .btn-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.25s;
+            border: none;
+        }
+        
+        .btn-gold:hover {
+            background: #e6ad00;
+            transform: translateY(-3px);
+        }
+        
+        .timeline-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(255,192,0,0.15);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .amount-badge { font-size: 1.4rem; padding: 0.3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">STEM<span>Jr</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-sscet.html">About SSCET</a></li>
+                <li class="nav-item"><a class="nav-link" href="exam-structure.html">Exam Structure</a></li>
+                <li class="nav-item"><a class="nav-link active" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container text-white" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-8">
+                <span class="badge-gold d-inline-block mb-3"><i class="fas fa-trophy me-1"></i> Financial Reward</span>
+                <h1 class="mb-3">Scholarship: <span class="gold-text">₹1000 Per Month</span></h1>
+                <p class="lead opacity-90">Top-performing students receive a monthly scholarship of ₹1000 for one full academic year — from June 2026 to June 2027.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Scholarship Amount Highlight -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="scholarship-card text-center">
+                    <i class="fas fa-rupee-sign fa-4x mb-3" style="color: var(--gold-brand);"></i>
+                    <div class="amount-badge mb-3">₹1000 / month</div>
+                    <h2 class="h3 fw-bold">Yearly Scholarship: ₹12,000</h2>
+                    <p class="text-muted">June 2026 – June 2027 (12 months)</p>
+                    <hr>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <div class="stat-number-lg">3</div>
+                            <p class="mb-0">Top Students<br>per standard</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="stat-number-lg">7-9</div>
+                            <p class="mb-0">Standards<br>Eligible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 class="section-title-left">Who Gets the Scholarship?</h2>
+                <p class="lead">The top 3 students who score the highest marks in both levels (Level 1 + Level 2) from <strong>each standard in each school</strong> will be selected for the scholarship.</p>
+                <div class="mt-4">
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="timeline-icon"><i class="fas fa-school" style="color: var(--gold-brand); font-size: 1.5rem;"></i></div>
+                        <div><strong>Per School Selection:</strong> Separate winners for 7th, 8th, and 9th standards.</div>
+                    </div>
+                    <div class="d-flex gap-3 mb-3">
+                        <div class="timeline-icon"><i class="fas fa-chart-line" style="color: var(--gold-brand); font-size: 1.5rem;"></i></div>
+                        <div><strong>Evaluation Criteria:</strong> Combined score of Written Test (Level 1) + Practical Test (Level 2).</div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class="timeline-icon"><i class="fas fa-calendar-alt" style="color: var(--gold-brand); font-size: 1.5rem;"></i></div>
+                        <div><strong>Scholarship Tenure:</strong> 12 months — from June 2026 to June 2027.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scholarship Benefits Beyond Money -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">More Than Just Scholarship</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+                <div class="info-card text-center">
+                    <i class="fas fa-chalkboard-user fa-3x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Free Mentorship</h5>
+                    <p>Guidance from experienced faculty for NEET & IIT-JEE foundation.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+                <div class="info-card text-center">
+                    <i class="fas fa-brain fa-3x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Logical Skill Development</h5>
+                    <p>Special workshops to improve reasoning and problem-solving.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="flip-left" data-aos-delay="300">
+                <div class="info-card text-center">
+                    <i class="fas fa-medal fa-3x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Recognition & Certification</h5>
+                    <p>Certificate of merit and recognition at school level.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Selection Process Details -->
+<section class="py-5" style="background: #f0f4fa;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7" data-aos="fade-right">
+                <h2 class="section-title-left">How Are Students Selected?</h2>
+                <p>The selection process is transparent and merit-based. Students who perform exceptionally in both levels of the SSCET exam are eligible for the monthly scholarship.</p>
+                <div class="mt-4">
+                    <div class="d-flex mb-3">
+                        <div class="me-3"><span class="badge rounded-pill bg-dark" style="background: var(--gold-brand) !important; color:#002147;">Step 1</span></div>
+                        <div><strong>Level 1 Written Exam (OMR):</strong> Minimum qualifying marks required to proceed to Level 2.</div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3"><span class="badge rounded-pill bg-dark" style="background: var(--gold-brand) !important; color:#002147;">Step 2</span></div>
+                        <div><strong>Level 2 Practical Test:</strong> Hands-on assessment of scientific aptitude and logic.</div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3"><span class="badge rounded-pill bg-dark" style="background: var(--gold-brand) !important; color:#002147;">Step 3</span></div>
+                        <div><strong>Final Merit List:</strong> Combined score (60% Level 1 + 40% Level 2) determines top 3 per standard per school.</div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3"><span class="badge rounded-pill bg-dark" style="background: var(--gold-brand) !important; color:#002147;">Step 4</span></div>
+                        <div><strong>Scholarship Disbursement:</strong> Monthly ₹1000 credited to parent/student account from June 2026.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center" data-aos="fade-left">
+                <img src="https://picsum.photos/id/100/450/400" class="img-fluid rounded-4 shadow" alt="Selection process">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scholarship Distribution Timeline -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Scholarship Distribution Timeline</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="row g-4 text-center">
+                        <div class="col-md-3">
+                            <div class="timeline-icon mx-auto mb-2"><i class="fas fa-edit"></i></div>
+                            <h6 class="fw-bold">Exam Date</h6>
+                            <small class="text-muted">June 2026</small>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="timeline-icon mx-auto mb-2"><i class="fas fa-chart-simple"></i></div>
+                            <h6 class="fw-bold">Result Declaration</h6>
+                            <small class="text-muted">Within 2 weeks</small>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="timeline-icon mx-auto mb-2"><i class="fas fa-rupee-sign"></i></div>
+                            <h6 class="fw-bold">1st Scholarship</h6>
+                            <small class="text-muted">July 2026</small>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="timeline-icon mx-auto mb-2"><i class="fas fa-calendar-check"></i></div>
+                            <h6 class="fw-bold">Monthly Payout</h6>
+                            <small class="text-muted">Till June 2027</small>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <p class="text-center mb-0"><i class="fas fa-info-circle me-2" style="color: var(--gold-brand);"></i> Scholarships are disbursed directly via bank transfer / school account. Parents will be notified every month.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frequently Asked Questions about Scholarship -->
+<section class="py-5" style="background: #f0f4fa;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Scholarship FAQs</h2>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Is the scholarship renewable?</h5>
+                    <p>The scholarship is awarded for one academic year (June 2026 – June 2027). Students must re-appear for SSCET each year to renew.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="info-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>How many students get the scholarship?</h5>
+                    <p>Top 3 students from each standard (7th, 8th, 9th) in <strong>each participating school</strong> will receive the scholarship. So multiple winners per school.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="info-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>When will the scholarship money be credited?</h5>
+                    <p>The first installment will be credited in July 2026, followed by monthly payments until June 2027.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="info-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Is there any bond or agreement?</h5>
+                    <p>No. It's a pure merit-based scholarship with no further obligations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-5" style="background: var(--primary-navy);">
+    <div class="container text-center text-white" data-aos="zoom-in">
+        <h2 class="text-white mb-3">Don't Miss This Opportunity!</h2>
+        <p class="lead mb-4">Limited seats: Only 2000 applications per zone. Secure your chance to win ₹1000/month scholarship.</p>
+        <button class="btn btn-gold btn-lg px-5" data-bs-toggle="modal" data-bs-target="#applyModal"><i class="fas fa-edit me-2"></i> Apply for SSCET 2026</button>
+        <div class="mt-4">
+            <p><i class="fas fa-phone-alt me-2" style="color: var(--gold-brand);"></i> 86100 61616  |  9994553289  |  <i class="fas fa-envelope"></i> support@stemjunior.in</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <h4 class="text-warning">STEM Jr Academy</h4>
+                <p>Empowering young minds through scholarship exams and early competitive training. Recognized across Dharmapuri district.</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about-sscet.html" class="text-white-50 text-decoration-none">About SSCET</a></li>
+                    <li><a href="exam-structure.html" class="text-white-50 text-decoration-none">Exam Pattern</a></li>
+                    <li><a href="scholarship.html" class="text-white-50 text-decoration-none">Scholarship</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i class="fas fa-phone-alt me-2"></i> 86100 61616 / 9994553289</p>
+                <p><i class="fas fa-location-dot me-2"></i> I.V.L School campus, Irumathur, Dharmapuri - 635201</p>
+                <p><i class="fas fa-globe"></i> www.stemjunior.in</p>
+            </div>
+        </div>
+        <hr class="opacity-25">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2026 STEM Jr Scholarship Cum Entrance Test. All rights reserved. | Every selected student gets ₹1000/month scholarship.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Registration Form -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header bg-white border-0" style="border-bottom: 2px solid var(--gold-brand);">
+                <h5 class="modal-title fw-bold" id="applyModalLabel"><i class="fas fa-graduation-cap" style="color: var(--gold-brand);"></i> SSCET Registration 2026</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning bg-opacity-15">Limited to 2000 applications per zone. Scholarship: ₹1000/month for top 3 students per standard/school.</div>
+                <form id="registerFormModal">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name *" id="regName" required></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Parent / Guardian" id="regParent"></div>
+                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email ID" id="regEmail" required></div>
+                        <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number" id="regMobile" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regStandard"><option>7th Standard</option><option>8th Standard</option><option>9th Standard</option></select></div>
+                        <div class="col-md-4"><input type="text" class="form-control" placeholder="School Name" id="regSchool" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regZone"><option>Dharmapuri Zone</option><option>Palakkodu Zone</option><option>Pennagaram Zone</option><option>Harur Zone</option><option>Pappireddipatti Zone</option></select></div>
+                        <div class="col-12"><textarea class="form-control" rows="2" placeholder="Address (optional)"></textarea></div>
+                        <small class="text-muted"><i class="fas fa-info-circle"></i> After registration, you will receive exam details on your school/contact.</small>
+                    </div>
+                    <div class="mt-4"><button type="submit" class="btn btn-gold w-100" style="background: var(--gold-brand); color:#002147; font-weight: 700;">Register for SSCET (Free)</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 60 });
+    
+    document.getElementById('registerFormModal')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('regName')?.value;
+        if(name) {
+            alert(`✅ Registration submitted successfully, ${name}! We will contact you soon for exam confirmation. Limited seats per zone.`);
+            this.reset();
+            bootstrap.Modal.getInstance(document.getElementById('applyModal')).hide();
+        } else {
+            alert('Please enter your full name.');
+        }
+    });
+</script>
+</body>
+</html>

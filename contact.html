@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Contact Us | STEM Jr Academy | SSCET 2026</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #002147;
+            --gold-brand: #ffc000;
+            --gold-light: #ffd966;
+            --pure-white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-soft: #eef2f8;
+            --shadow-sm: 0 12px 30px rgba(0,33,71,0.08);
+            --shadow-hover: 0 20px 35px rgba(0,33,71,0.12);
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+        
+        /* navbar */
+        .navbar {
+            background: var(--primary-navy) !important;
+            padding: 0.9rem 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--gold-brand);
+        }
+        
+        .navbar-brand {
+            color: var(--gold-brand) !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-brand span {
+            color: var(--pure-white);
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 40px;
+            margin-left: 8px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.92) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            margin: 0 0.6rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold-brand) !important;
+        }
+        
+        /* page header */
+        .page-header {
+            background: linear-gradient(115deg, #002147 0%, #0a2c4e 100%);
+            padding: 70px 0 80px;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        .gold-text {
+            color: var(--gold-brand);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: var(--gold-brand);
+            display: block;
+            margin: 16px auto 0;
+            border-radius: 6px;
+        }
+        
+        .contact-card {
+            background: var(--pure-white);
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,33,71,0.05);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(255,192,0,0.12);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .info-icon i {
+            font-size: 1.6rem;
+            color: var(--gold-brand);
+        }
+        
+        .badge-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .form-control-custom {
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 12px 18px;
+            transition: 0.2s;
+        }
+        
+        .form-control-custom:focus {
+            border-color: var(--gold-brand);
+            box-shadow: 0 0 0 3px rgba(255,192,0,0.2);
+            outline: none;
+        }
+        
+        .btn-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.25s;
+            border: none;
+        }
+        
+        .btn-gold:hover {
+            background: #e6ad00;
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            background: #001a36;
+            color: #e0e7f0;
+            padding: 50px 0 25px;
+            border-top: 3px solid var(--gold-brand);
+        }
+        
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            height: 280px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">STEM<span>Jr</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-sscet.html">About SSCET</a></li>
+                <li class="nav-item"><a class="nav-link" href="exam-structure.html">Exam Structure</a></li>
+                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container text-white" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-8">
+                <span class="badge-gold d-inline-block mb-3"><i class="fas fa-address-card me-1"></i> Get in Touch</span>
+                <h1 class="mb-3">Contact <span class="gold-text">STEM Jr Academy</span></h1>
+                <p class="lead opacity-90">Have questions about SSCET exam, scholarship, or registration? Reach out to us — we're here to help!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information & Map -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Contact Details Column -->
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="contact-card">
+                    <h3 class="h3 fw-bold mb-4"><i class="fas fa-map-pin me-2" style="color: var(--gold-brand);"></i> Our Location</h3>
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Address</h6>
+                            <p class="mb-0 text-muted">I.V.L School campus, Irumathur, Dharmapuri - 635 201.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Phone Numbers</h6>
+                            <p class="mb-0 text-muted">86100 61616  <br> 9994553289</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Email Address</h6>
+                            <p class="mb-0 text-muted">support@stemjunior.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Website</h6>
+                            <p class="mb-0 text-muted">www.stemjunior.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Office Hours</h6>
+                            <p class="mb-0 text-muted">Monday – Saturday: 9:00 AM to 5:00 PM</p>
+                            <small class="text-muted">Sunday Closed</small>
+                        </div>
+                    </div>
+                    
+                    <hr class="my-4">
+                    <div>
+                        <h6 class="fw-bold"><i class="fas fa-users me-2" style="color: var(--gold-brand);"></i> Exam Support Helpline</h6>
+                        <p class="small text-muted">For any queries related to SSCET exam, hall ticket, or scholarship, please call between 10 AM - 4 PM on weekdays.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map & Additional Info Column -->
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="contact-card">
+                    <h3 class="h3 fw-bold mb-4"><i class="fas fa-map-marked-alt me-2" style="color: var(--gold-brand);"></i> Find Us Here</h3>
+                    <div class="map-container mb-4">
+                        <!-- Google Maps Embed for Dharmapuri, Irumathur area -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31261.594052718983!2d78.15715374999999!3d12.13135585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bac3a7f5f5b9b9f%3A0x8e2e4f2b6a5c8d4e!2sDharmapuri%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="bg-light p-3 rounded-3">
+                        <i class="fas fa-bus me-2" style="color: var(--gold-brand);"></i> <strong>Nearby Landmark:</strong> I.V.L School campus, Irumathur — easily accessible by local buses and private vehicles.
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="fw-bold">📌 Zonal Office (Exam Coordination)</h6>
+                        <p class="mb-0">STEM Jr Academy, Dharmapuri Main Branch, Near Collectorate, Dharmapuri - 635201.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form & Inquiry Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title-left" style="text-align: left;">Send Us a Message</h2>
+                <p class="mb-4">Have specific questions about the SSCET exam, eligibility, or scholarship? Fill out the form and our team will get back to you within 24 hours.</p>
+                <form id="contactForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-custom" placeholder="Your Full Name *" id="contactName" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-custom" placeholder="Email Address *" id="contactEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control form-control-custom" placeholder="Mobile Number" id="contactPhone">
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select form-control-custom" id="contactSubject">
+                            <option value="Exam Related">Exam Related Query</option>
+                            <option value="Scholarship">Scholarship Information</option>
+                            <option value="Registration">Registration Help</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <textarea class="form-control form-control-custom" rows="4" placeholder="Your Message *" id="contactMessage" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold w-100"><i class="fas fa-paper-plane me-2"></i> Send Message</button>
+                </form>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="contact-card text-center" style="background: linear-gradient(145deg, #fef7e6, #ffffff);">
+                    <i class="fas fa-headset fa-3x mb-3" style="color: var(--gold-brand);"></i>
+                    <h4>Quick Assistance</h4>
+                    <p class="lead fw-semibold">Call our helpline for immediate support</p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-3">
+                        <div><i class="fas fa-phone-alt" style="color: var(--gold-brand);"></i> 86100 61616</div>
+                        <div><i class="fas fa-phone-alt" style="color: var(--gold-brand);"></i> 9994553289</div>
+                    </div>
+                    <hr class="my-4">
+                    <div>
+                        <p class="mb-2"><i class="fab fa-whatsapp me-2" style="color: #25D366;"></i> <strong>WhatsApp Support:</strong> 86100 61616</p>
+                        <p><i class="fas fa-envelope me-2" style="color: var(--gold-brand);"></i> <strong>Email:</strong> support@stemjunior.in</p>
+                    </div>
+                    <div class="mt-3">
+                        <span class="badge-gold">Response within 24 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frequently Asked Questions - Contact Related -->
+<section class="py-5" style="background: #f0f4fa;">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>How can I register for SSCET?</h5>
+                    <p class="text-muted">You can register online by clicking the "Apply Now" button on any page, or contact your school coordinator. Registration is free and limited to 2000 seats per zone.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Where is the exam conducted?</h5>
+                    <p class="text-muted">The exam is conducted at designated schools across Dharmapuri district (6 taluks). Exact venue details will be shared on the hall ticket.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>When will I receive my hall ticket?</h5>
+                    <p class="text-muted">Hall tickets will be sent via email/SMS one week before the exam date. You can also contact our helpline for any issues.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="contact-card h-100">
+                    <i class="fas fa-question-circle fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Is there any registration fee?</h5>
+                    <p class="text-muted">No, SSCET registration is completely free for all eligible students from 7th, 8th, and 9th standards.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-5" style="background: var(--primary-navy);">
+    <div class="container text-center text-white" data-aos="zoom-in">
+        <h2 class="text-white mb-3">Ready to Apply for SSCET 2026?</h2>
+        <p class="lead mb-4">Limited seats: Only 2000 applications per zone. Register now to secure your chance for the ₹1000/month scholarship.</p>
+        <button class="btn btn-gold btn-lg px-5" data-bs-toggle="modal" data-bs-target="#applyModal"><i class="fas fa-edit me-2"></i> Apply Now</button>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <h4 class="text-warning">STEM Jr Academy</h4>
+                <p>Empowering young minds through scholarship exams and early competitive training. Recognized across Dharmapuri district.</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about-sscet.html" class="text-white-50 text-decoration-none">About SSCET</a></li>
+                    <li><a href="exam-structure.html" class="text-white-50 text-decoration-none">Exam Pattern</a></li>
+                    <li><a href="scholarship.html" class="text-white-50 text-decoration-none">Scholarship</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i class="fas fa-phone-alt me-2"></i> 86100 61616 / 9994553289</p>
+                <p><i class="fas fa-location-dot me-2"></i> I.V.L School campus, Irumathur, Dharmapuri - 635201</p>
+                <p><i class="fas fa-globe"></i> www.stemjunior.in</p>
+            </div>
+        </div>
+        <hr class="opacity-25">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2026 STEM Jr Scholarship Cum Entrance Test. All rights reserved. | Every selected student gets ₹1000/month scholarship.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Registration Form -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header bg-white border-0" style="border-bottom: 2px solid var(--gold-brand);">
+                <h5 class="modal-title fw-bold" id="applyModalLabel"><i class="fas fa-graduation-cap" style="color: var(--gold-brand);"></i> SSCET Registration 2026</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning bg-opacity-15">Limited to 2000 applications per zone. Scholarship: ₹1000/month for top 3 students per standard/school.</div>
+                <form id="registerFormModal">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name *" id="regName" required></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Parent / Guardian" id="regParent"></div>
+                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email ID" id="regEmail" required></div>
+                        <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number" id="regMobile" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regStandard"><option>7th Standard</option><option>8th Standard</option><option>9th Standard</option></select></div>
+                        <div class="col-md-4"><input type="text" class="form-control" placeholder="School Name" id="regSchool" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regZone"><option>Dharmapuri Zone</option><option>Palakkodu Zone</option><option>Pennagaram Zone</option><option>Harur Zone</option><option>Pappireddipatti Zone</option></select></div>
+                        <div class="col-12"><textarea class="form-control" rows="2" placeholder="Address (optional)"></textarea></div>
+                        <small class="text-muted"><i class="fas fa-info-circle"></i> After registration, you will receive exam details on your school/contact.</small>
+                    </div>
+                    <div class="mt-4"><button type="submit" class="btn btn-gold w-100" style="background: var(--gold-brand); color:#002147; font-weight: 700;">Register for SSCET (Free)</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 60 });
+    
+    // Contact form handler
+    document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('contactName')?.value;
+        if(name) {
+            alert(`✅ Thank you ${name}! Your message has been sent. Our team will reply within 24 hours.`);
+            this.reset();
+        } else {
+            alert('Please enter your name.');
+        }
+    });
+    
+    // Registration modal handler
+    document.getElementById('registerFormModal')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('regName')?.value;
+        if(name) {
+            alert(`✅ Registration submitted successfully, ${name}! We will contact you soon for exam confirmation. Limited seats per zone.`);
+            this.reset();
+            bootstrap.Modal.getInstance(document.getElementById('applyModal')).hide();
+        } else {
+            alert('Please enter your full name.');
+        }
+    });
+</script>
+</body>
+</html>

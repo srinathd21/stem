@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Exam Structure | SSCET 2026 | STEM Jr Scholarship</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #002147;
+            --gold-brand: #ffc000;
+            --gold-light: #ffd966;
+            --pure-white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-soft: #eef2f8;
+            --shadow-sm: 0 12px 30px rgba(0,33,71,0.08);
+            --shadow-hover: 0 20px 35px rgba(0,33,71,0.12);
+        }
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: var(--off-white);
+            overflow-x: hidden;
+        }
+        
+        /* navbar */
+        .navbar {
+            background: var(--primary-navy) !important;
+            padding: 0.9rem 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+            border-bottom: 2px solid var(--gold-brand);
+        }
+        
+        .navbar-brand {
+            color: var(--gold-brand) !important;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .navbar-brand span {
+            color: var(--pure-white);
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.15);
+            padding: 3px 10px;
+            border-radius: 40px;
+            margin-left: 8px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.92) !important;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            margin: 0 0.6rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--gold-brand) !important;
+        }
+        
+        /* page header */
+        .page-header {
+            background: linear-gradient(115deg, #002147 0%, #0a2c4e 100%);
+            padding: 70px 0 80px;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        .gold-text {
+            color: var(--gold-brand);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            width: 90px;
+            height: 4px;
+            background: var(--gold-brand);
+            display: block;
+            margin: 16px auto 0;
+            border-radius: 6px;
+        }
+        
+        .level-card {
+            background: var(--pure-white);
+            border-radius: 32px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid rgba(0,33,71,0.05);
+        }
+        
+        .level-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .level-number {
+            width: 70px;
+            height: 70px;
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .badge-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .info-card {
+            background: var(--pure-white);
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            height: 100%;
+        }
+        
+        .timeline-step {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .step-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,192,0,0.15);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .step-icon i {
+            font-size: 1.5rem;
+            color: var(--gold-brand);
+        }
+        
+        .footer {
+            background: #001a36;
+            color: #e0e7f0;
+            padding: 50px 0 25px;
+            border-top: 3px solid var(--gold-brand);
+        }
+        
+        .btn-gold {
+            background: var(--gold-brand);
+            color: var(--primary-navy);
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.25s;
+            border: none;
+        }
+        
+        .btn-gold:hover {
+            background: #e6ad00;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .level-number { width: 55px; height: 55px; font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">STEM<span>Jr</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-sscet.html">About SSCET</a></li>
+                <li class="nav-item"><a class="nav-link active" href="exam-structure.html">Exam Structure</a></li>
+                <li class="nav-item"><a class="nav-link" href="scholarship.html">Scholarship</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container text-white" data-aos="fade-up">
+        <div class="row">
+            <div class="col-lg-8">
+                <span class="badge-gold d-inline-block mb-3"><i class="fas fa-layer-group me-1"></i> Two-Level Assessment</span>
+                <h1 class="mb-3">Exam Structure: <span class="gold-text">Level 1 + Level 2</span></h1>
+                <p class="lead opacity-90">SSCET is designed to evaluate both theoretical knowledge and practical application. Students who clear Level 1 advance to the hands-on Level 2 test.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Level 1 & Level 2 Cards -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Level 1 -->
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                <div class="level-card">
+                    <div class="level-number">1</div>
+                    <h2 class="h2 fw-bold mb-2">LEVEL 1</h2>
+                    <span class="badge-gold d-inline-block mb-3"><i class="fas fa-file-alt me-1"></i> Written Test (OMR Sheet)</span>
+                    <p class="mb-3">Objective multiple-choice questions conducted via OMR sheet. This level tests conceptual clarity, speed, and accuracy.</p>
+                    <div class="mt-4">
+                        <h5 class="fw-semibold"><i class="fas fa-list-check me-2" style="color: var(--gold-brand);"></i> Key Highlights:</h5>
+                        <ul class="list-unstyled mt-2">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Subjects: Science, Mathematics, Logical Reasoning</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Total Questions: 100 (MCQs)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Duration: 90 Minutes</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Marking: +4 for correct, -1 for incorrect</li>
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> OMR sheet evaluation – instant score calculation</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3 p-3 bg-light rounded-3">
+                        <i class="fas fa-arrow-right me-2" style="color: var(--gold-brand);"></i> <strong>Selection:</strong> Top 40% students from Level 1 qualify for Level 2.
+                    </div>
+                </div>
+            </div>
+            <!-- Level 2 -->
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <div class="level-card">
+                    <div class="level-number">2</div>
+                    <h2 class="h2 fw-bold mb-2">LEVEL 2</h2>
+                    <span class="badge-gold d-inline-block mb-3"><i class="fas fa-microscope me-1"></i> Practical Test</span>
+                    <p class="mb-3">Hands-on assessment for shortlisted students. This level evaluates application of concepts, experimental skills, and innovative thinking.</p>
+                    <div class="mt-4">
+                        <h5 class="fw-semibold"><i class="fas fa-flask me-2" style="color: var(--gold-brand);"></i> Key Highlights:</h5>
+                        <ul class="list-unstyled mt-2">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Practical problem-solving tasks</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Lab-based or model-based activities</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Assessed by STEM experts</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Real-world application of science & logic</li>
+                            <li><i class="fas fa-check-circle me-2" style="color: var(--gold-brand);"></i> Duration: 60 minutes per batch</li>
+                        </ul>
+                    </div>
+                    <div class="mt-3 p-3 bg-light rounded-3">
+                        <i class="fas fa-star me-2" style="color: var(--gold-brand);"></i> <strong>Final Selection:</strong> Combined score of Level 1 (60%) + Level 2 (40%) determines top 3 students per standard per school.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Exam Timeline & Process -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Exam Process & Timeline</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="info-card">
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 1: Registration</h5><p class="mb-0">Students register online via school or portal. Limited to 2000 applications per zone. Registration closes one week before exam.</p></div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-ticket-alt"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 2: Hall Ticket Generation</h5><p class="mb-0">Digital hall tickets sent to registered email/SMS with exam venue, date, and timing.</p></div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-pen-fancy"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 3: Level 1 – Written OMR Exam</h5><p class="mb-0">Conducted at designated school centres across Dharmapuri district (6 taluks). OMR answer sheets collected for evaluation.</p></div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 4: Result Declaration (Level 1)</h5><p class="mb-0">Shortlisted students (top 40%) are notified via school & email to appear for Level 2.</p></div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-microscope"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 5: Level 2 – Practical Test</h5><p class="mb-0">Hands-on practical assessment at STEM Jr Academy lab or partnered schools.</p></div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-trophy"></i></div>
+                        <div><h5 class="fw-bold mb-1">Step 6: Final Selection & Scholarship</h5><p class="mb-0">Top 3 students from each standard (7th,8th,9th) in each school receive ₹1000/month scholarship from June 2026 – June 2027.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Syllabus & Areas Covered -->
+<section class="py-5" style="background: #f0f4fa;">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <img src="https://picsum.photos/id/158/550/400" class="img-fluid rounded-4 shadow" alt="Syllabus coverage" style="width: 100%;">
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 class="section-title-left" style="text-align: left;">Topics & Syllabus</h2>
+                <p>The SSCET syllabus is aligned with school curriculum (7th-9th) and competitive exam foundations. Emphasis on conceptual clarity and logical application.</p>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-atom me-2" style="color: var(--gold-brand);"></i> Physics Basics</li>
+                            <li><i class="fas fa-flask me-2" style="color: var(--gold-brand);"></i> Chemistry Fundamentals</li>
+                            <li><i class="fas fa-dna me-2" style="color: var(--gold-brand);"></i> Biology & Life Science</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-calculator me-2" style="color: var(--gold-brand);"></i> Mathematics</li>
+                            <li><i class="fas fa-brain me-2" style="color: var(--gold-brand);"></i> Logical Reasoning</li>
+                            <li><i class="fas fa-chart-simple me-2" style="color: var(--gold-brand);"></i> Data Interpretation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="alert alert-light mt-3 border-start border-4 border-warning">
+                    <i class="fas fa-map-pin me-2"></i> <strong>Areas Covered:</strong> Six taluks across Dharmapuri District – Dharmapuri, Palakkodu, Pennagaram, Harur, Pappireddipatti, Karimangalam.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Important Instructions -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Important Exam Guidelines</h2>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="info-card text-center">
+                    <i class="fas fa-id-card fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Hall Ticket Mandatory</h5>
+                    <p class="small">Carry printed hall ticket and school ID card to the exam centre.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="info-card text-center">
+                    <i class="fas fa-clock fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Reporting Time</h5>
+                    <p class="small">Reach the venue 30 minutes before the scheduled time. Latecomers not permitted.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="info-card text-center">
+                    <i class="fas fa-ban fa-2x mb-3" style="color: var(--gold-brand);"></i>
+                    <h5>Prohibited Items</h5>
+                    <p class="small">Mobile phones, smartwatches, calculators, or any electronic devices are strictly prohibited.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-5" style="background: var(--primary-navy);">
+    <div class="container text-center text-white" data-aos="zoom-in">
+        <h2 class="text-white mb-3">Ready to Take the Challenge?</h2>
+        <p class="lead mb-4">Register before seats fill up! Only 2000 applications per zone.</p>
+        <button class="btn btn-gold btn-lg px-5" data-bs-toggle="modal" data-bs-target="#applyModal"><i class="fas fa-edit me-2"></i> Apply for SSCET 2026</button>
+        <div class="mt-4">
+            <p><i class="fas fa-phone-alt me-2" style="color: var(--gold-brand);"></i> 86100 61616  |  9994553289  |  <i class="fas fa-envelope"></i> support@stemjunior.in</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-3">
+                <h4 class="text-warning">STEM Jr Academy</h4>
+                <p>Empowering young minds through scholarship exams and early competitive training. Recognized across Dharmapuri district.</p>
+            </div>
+            <div class="col-md-3 mb-3">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="about-sscet.html" class="text-white-50 text-decoration-none">About SSCET</a></li>
+                    <li><a href="exam-structure.html" class="text-white-50 text-decoration-none">Exam Pattern</a></li>
+                    <li><a href="scholarship.html" class="text-white-50 text-decoration-none">Scholarship</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Get in Touch</h5>
+                <p><i class="fas fa-phone-alt me-2"></i> 86100 61616 / 9994553289</p>
+                <p><i class="fas fa-location-dot me-2"></i> I.V.L School campus, Irumathur, Dharmapuri - 635201</p>
+                <p><i class="fas fa-globe"></i> www.stemjunior.in</p>
+            </div>
+        </div>
+        <hr class="opacity-25">
+        <div class="text-center">
+            <p class="mb-0">&copy; 2026 STEM Jr Scholarship Cum Entrance Test. All rights reserved. | Every selected student gets ₹1000/month scholarship.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal Registration Form -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-4 border-0">
+            <div class="modal-header bg-white border-0" style="border-bottom: 2px solid var(--gold-brand);">
+                <h5 class="modal-title fw-bold" id="applyModalLabel"><i class="fas fa-graduation-cap" style="color: var(--gold-brand);"></i> SSCET Registration 2026</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-warning bg-opacity-15">Limited to 2000 applications per zone. Scholarship: ₹1000/month for top 3 students per standard/school.</div>
+                <form id="registerFormModal">
+                    <div class="row g-3">
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Full Name *" id="regName" required></div>
+                        <div class="col-md-6"><input type="text" class="form-control" placeholder="Parent / Guardian" id="regParent"></div>
+                        <div class="col-md-6"><input type="email" class="form-control" placeholder="Email ID" id="regEmail" required></div>
+                        <div class="col-md-6"><input type="tel" class="form-control" placeholder="Mobile Number" id="regMobile" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regStandard"><option>7th Standard</option><option>8th Standard</option><option>9th Standard</option></select></div>
+                        <div class="col-md-4"><input type="text" class="form-control" placeholder="School Name" id="regSchool" required></div>
+                        <div class="col-md-4"><select class="form-select" id="regZone"><option>Dharmapuri Zone</option><option>Palakkodu Zone</option><option>Pennagaram Zone</option><option>Harur Zone</option><option>Pappireddipatti Zone</option></select></div>
+                        <div class="col-12"><textarea class="form-control" rows="2" placeholder="Address (optional)"></textarea></div>
+                        <small class="text-muted"><i class="fas fa-info-circle"></i> After registration, you will receive exam details on your school/contact.</small>
+                    </div>
+                    <div class="mt-4"><button type="submit" class="btn btn-gold w-100" style="background: var(--gold-brand); color:#002147; font-weight: 700;">Register for SSCET (Free)</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 60 });
+    
+    document.getElementById('registerFormModal')?.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('regName')?.value;
+        if(name) {
+            alert(`✅ Registration submitted successfully, ${name}! We will contact you soon for exam confirmation. Limited seats per zone.`);
+            this.reset();
+            bootstrap.Modal.getInstance(document.getElementById('applyModal')).hide();
+        } else {
+            alert('Please enter your full name.');
+        }
+    });
+</script>
+</body>
+</html>
